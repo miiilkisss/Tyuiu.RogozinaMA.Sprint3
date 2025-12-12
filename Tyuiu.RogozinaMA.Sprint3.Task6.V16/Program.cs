@@ -65,4 +65,4 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task6.V16
             Console.ReadKey();
         }
     }
-}
+} 
