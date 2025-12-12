@@ -45,4 +45,4 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task1.V1.Test
             Assert.IsTrue(decimalPlaces <= 3);
         }
     }
-}
+} 

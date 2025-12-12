@@ -40,5 +40,5 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task1.V1
 
             Console.ReadLine();
         }
-    }
+    } 
 }
