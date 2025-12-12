@@ -13,7 +13,7 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task4.V20
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #3                                                               *");
-            Console.WriteLine("* Тема: Алгоритмы циклической структуры                                   *");
+            Console.WriteLine("* Тема:Использование операторов continue и break в циклах                 *");
             Console.WriteLine("* Задание #4                                                              *");
             Console.WriteLine("* Вариант #20                                                             *");
             Console.WriteLine("* Выполнила: Рогозина Милана Андреевна | ИСПб-25-1                        *");
