@@ -1,31 +1,29 @@
 ﻿using System;
-using System.Text;
 using tyuiu.cources.programming.interfaces.Sprint3;
 
 namespace Tyuiu.RogozinaMA.Sprint3.Task3.V19.Lib
 {
-    public class DataService: ISprint3Task3V19
+    public class DataService : ISprint3Task3V19
     {
-        public string ReplaceXOnTwo(string value)
+        public string ReplaceCharOnNum(string value, char replaceable, char replacement)
         {
-            // Создаем StringBuilder для эффективной работы со строками
-            StringBuilder result = new StringBuilder();
+            // Используем цикл foreach для замены символов
+            string result = "";
 
-            // Используем цикл foreach для перебора каждого символа в строке
             foreach (char ch in value)
             {
-                // Если символ равен 'x', заменяем на '2', иначе оставляем как есть
-                if (ch == 'x')
+                // Если символ равен replaceable, заменяем на replacement
+                if (ch == replaceable)
                 {
-                    result.Append('2');
+                    result += replacement;
                 }
                 else
                 {
-                    result.Append(ch);
+                    result += ch;
                 }
             }
 
-            return result.ToString();
+            return result;
         }
     }
 }

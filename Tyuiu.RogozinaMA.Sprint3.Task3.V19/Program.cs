@@ -21,19 +21,23 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task3.V19
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Используя цикл foreach заменить буквы x на цифру 2 в строке:           *");
             Console.WriteLine("* sxxrrg x vfrx                                                           *");
-            Console.WriteLine("*                                                                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
             string inputString = "sxxrrg x vfrx";
+            char replaceableChar = 'x';
+            char replacementChar = '2';
+
             Console.WriteLine($"Исходная строка: {inputString}");
+            Console.WriteLine($"Заменяемый символ: '{replaceableChar}'");
+            Console.WriteLine($"Символ для замены: '{replacementChar}'");
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string result = ds.ReplaceXOnTwo(inputString);
+            string result = ds.ReplaceCharOnNum(inputString, replaceableChar, replacementChar);
             Console.WriteLine($"Результат: {result}");
 
             Console.WriteLine("***************************************************************************");
