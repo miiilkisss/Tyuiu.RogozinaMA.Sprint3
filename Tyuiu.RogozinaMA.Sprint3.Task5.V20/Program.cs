@@ -28,11 +28,11 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task5.V20
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int x = 5; 
-            int startValue1 = 1;
-            int stopValue1 = 3;
-            int startValue2 = 1;
-            int stopValue2 = 6;
+            int x = 5;
+            int startValue1 = 1;  
+            int stopValue1 = 3;   
+            int startValue2 = 1;  
+            int stopValue2 = 6;   
 
             Console.WriteLine($"Значение x = {x}");
             Console.WriteLine($"Внешний цикл: от i = {startValue1} до {stopValue1}");
@@ -43,16 +43,14 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task5.V20
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            double result = ds.GetSumSumSeries(x, startValue1, stopValue1, startValue2, stopValue2);
+            double result = ds.GetSumSumSeries(x, startValue1, startValue2, stopValue1, stopValue2);
             Console.WriteLine($"Результат y = {result}");
 
-           
             Console.WriteLine("\n***************************************************************************");
-            Console.WriteLine("* ПРОВЕРКА:                                                                *");
+            Console.WriteLine("* ПРОВЕРКА ОЖИДАЕМОГО РЕЗУЛЬТАТА:                                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine($"Ожидаемый результат: 50584.322");
-            Console.WriteLine($"Полученный результат: {result}");
-            Console.WriteLine($"Совпадение: {Math.Abs(result - 50584.322) < 0.001}");
+            Console.WriteLine($"Разница: {Math.Abs(result - 50584.322):F6}");
 
             Console.WriteLine("***************************************************************************");
             Console.ReadKey();
