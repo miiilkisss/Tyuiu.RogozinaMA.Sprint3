@@ -9,21 +9,17 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task5.V20.Lib
         {
             double totalSum = 0;
 
-            // Внешний цикл по i
+           
             for (int i = startValue1; i <= stopValue1; i++)
             {
-                // Внутренний цикл по k
+         
                 for (int k = startValue2; k <= stopValue2; k++)
                 {
-
-
-                    // Из формулы: (x/sin(x))^k
+                   
                     double sinX = Math.Sin(x);
-
-                    // Проверяем, чтобы sin(x) не был равен 0 (во избежание деления на 0)
+)
                     if (Math.Abs(sinX) < 0.0000001)
                     {
-                        // Если sin(x) очень близок к 0, пропускаем это слагаемое
                         continue;
                     }
 

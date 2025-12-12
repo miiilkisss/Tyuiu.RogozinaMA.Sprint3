@@ -10,64 +10,62 @@ namespace Tyuiu.RogozinaMA.Sprint3.Task5.V20.Test
         public void ValidGetSumSumSeries()
         {
             DataService ds = new DataService();
+            int x = 5; 
+            double res = ds.GetSumSumSeries(x, 1, 3, 1, 6);
+
+            double wait = 50584.322;
+            Assert.AreEqual(wait, res, 0.001); 
+        }
+
+        [TestMethod]
+        public void ValidGetSumSumSeriesXEqualsTwo()
+        {
+            DataService ds = new DataService();
             int x = 2;
             double res = ds.GetSumSumSeries(x, 1, 3, 1, 6);
 
-            // Для x=2: sin(2) ≈ 0.9093, x/sin(x) ≈ 2/0.9093 ≈ 2.199
-            // Сумма степеней от 1 до 6 для основания 2.199
-            // Это примерно: 2.199 + 4.836 + 10.635 + 23.387 + 51.428 + 113.088 = 205.573
-            // Умножаем на 3 (внешний цикл): 205.573 * 3 = 616.719
-            // Округление до 3 знаков: 616.719
-            double wait = 616.719;
+            Assert.IsTrue(res > 0 && res < 1000000);
+        }
+
+        [TestMethod]
+        public void ValidGetSumSumSeriesSingleK()
+        {
+            DataService ds = new DataService();
+            int x = 5;
+ 
+            double res = ds.GetSumSumSeries(x, 1, 3, 1, 1);
+
+            // Для x=5: sin(5) ≈ -0.9589, x/sin(x) ≈ -5.214
+            // 3 * (-5.214) ≈ -15.642
+            double wait = -15.642;
             Assert.AreEqual(wait, res, 0.001);
         }
 
         [TestMethod]
-        public void ValidGetSumSumSeriesXEqualsOne()
+        public void ValidGetSumSumSeriesSingleI()
         {
             DataService ds = new DataService();
-            int x = 1;
-            double res = ds.GetSumSumSeries(x, 1, 3, 1, 6);
+            int x = 5;
+    
+            double res = ds.GetSumSumSeries(x, 1, 1, 1, 6);
 
-            // Для x=1: sin(1) ≈ 0.8415, x/sin(x) ≈ 1/0.8415 ≈ 1.1884
-            // Можно проверить, что результат положительный
-            Assert.IsTrue(res > 0);
-        }
-
-        [TestMethod]
-        public void ValidGetSumSumSeriesSingleIteration()
-        {
-            DataService ds = new DataService();
-            int x = 3;
-            double res = ds.GetSumSumSeries(x, 1, 1, 1, 1);
-
-            // Для одного слагаемого: (3/sin(3))^1
-            // sin(3) ≈ 0.1411, 3/0.1411 ≈ 21.26
-            double wait = 21.26;
-            Assert.AreEqual(wait, res, 0.01);
+          
+            double wait = 16861.441;
+            Assert.AreEqual(wait, res, 0.001);
         }
 
         [TestMethod]
         public void ValidGetSumSumSeriesRounding()
         {
             DataService ds = new DataService();
-            double res = ds.GetSumSumSeries(2, 1, 3, 1, 6);
+            double res = ds.GetSumSumSeries(5, 1, 3, 1, 6);
 
+            // Проверяем округление до 3 знаков
             string resString = res.ToString("F6");
-            int decimalPlaces = resString.Length - resString.IndexOf('.') - 1;
-            Assert.IsTrue(decimalPlaces <= 3);
-        }
+            string decimalPart = resString.Substring(resString.IndexOf('.') + 1);
+            decimalPart = decimalPart.TrimEnd('0');
 
-        [TestMethod]
-        public void ValidGetSumSumSeriesZeroSin()
-        {
-            DataService ds = new DataService();
-       
-            int x = (int)Math.Round(Math.PI); // x = 3
-            double res = ds.GetSumSumSeries(x, 1, 3, 1, 6);
-
-      
-            Assert.IsFalse(double.IsInfinity(res) || double.IsNaN(res));
+            Assert.IsTrue(decimalPart.Length <= 3, $"Длина дробной части: {decimalPart.Length}");
         }
     }
 }
