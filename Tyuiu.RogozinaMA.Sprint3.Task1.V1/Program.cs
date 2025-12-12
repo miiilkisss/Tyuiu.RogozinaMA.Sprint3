@@ -3,7 +3,7 @@ using Tyuiu.RogozinaMA.Sprint3.Task1.V1.Lib;
 
 namespace Tyuiu.RogozinaMA.Sprint3.Task1.V1
 {
-    internal class Program
+    internal class Program 
     {
         static void Main(string[] args)
         {
